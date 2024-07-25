@@ -21,7 +21,7 @@
 
 
 module lod_test;
-wire [7:0] out;
+wire [2:0] out;
 reg [7:0] in;
 
 lod test1(in,out);
