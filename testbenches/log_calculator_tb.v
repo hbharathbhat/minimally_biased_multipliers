@@ -23,7 +23,7 @@
 module log_calculator_tb;
 reg [7:0] in; 
 wire [2:0] w1;
-wire [7:0] w2;
+wire [6:0] w2;
 log_calculator dut(in, w1, w2);
 
 initial
@@ -45,9 +45,9 @@ begin
     #5  in=8'b00001110;
     #5  in=8'b00001111;
     #5  in=8'b00010111;
-    #5  in=8'b00011000;
-    #5  in=8'b10110010;
-    #5  in=8'b01011110;
+    #5  in=8'b00101110;
+    #5  in=8'b00010110;
+    #5  in=8'b01101010;
     #5 $finish;
 
 end

@@ -23,15 +23,14 @@
 module barrel_shifter_tb;
     reg [7:0] data_in;   // 8-bit input data
     reg [2:0] shift;     // 3-bit shift amount (0 to 7)
-    reg dir;             // Direction: 0 for left, 1 for right
-    wire [7:0] data_out;
+    wire [6:0] data_out;
     
-    barrel_shifter bs1(data_in, shift, dir, data_out);
+    barrel_shifter bs1(data_in, shift, data_out);
     
     initial
     begin
-            data_in=8'b10110110; dir=1'b0; shift=3'b010;
-        #5  data_in=8'b10111011; dir=1'b1; shift=3'b011;
+            data_in=8'b01101010;  shift=3'b010;
+        #5  data_in=8'b10111011;  shift=3'b011;
         #100 $finish;
     
     
