@@ -20,7 +20,7 @@
 //////////////////////////////////////////////////////////////////////////////////
 
 
-module log_calculator(input [7:0] in, output [2:0] w1, [7:0] w2);
+module log_calculator(input [7:0] in, output [2:0] w1, [6:0] w2);
 //wire [2:0] w1, w2;
 wire [2:0] result, size;
 reg [7:0] temp;
@@ -38,5 +38,6 @@ begin
 end
 assign result=size-w1;
 barrel_shifter dut2(temp, result, w2); 
+
 
 endmodule

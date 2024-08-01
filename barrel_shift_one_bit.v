@@ -3,9 +3,9 @@
 // Company: 
 // Engineer: 
 // 
-// Create Date: 21.07.2024 14:05:59
+// Create Date: 16.07.2024 18:56:28
 // Design Name: 
-// Module Name: adder
+// Module Name: barrel_shifter
 // Project Name: 
 // Target Devices: 
 // Tool Versions: 
@@ -19,14 +19,17 @@
 // 
 //////////////////////////////////////////////////////////////////////////////////
 
+module barrel_shifter_one_bit (
+    input [7:0] data_in,   // 8-bit input data
+    output reg [7:0] data_out // 8-bit output data
+);
 
-module adder(input [4:0] a, b, input cin, output [4:0] s, output cout);
 
-wire c0,c1,c2,c3;
-
-full_adder fa0(a[0], b[0], cin, s[0], c0);
-full_adder fa1(a[1], b[1], c0, s[1], c1);
-full_adder fa2(a[2], b[2], c1, s[2], c2);
-full_adder fa3(a[3], b[3], c2, s[3], cout);
+always @(*) begin
+                data_out = data_in >> 1;
+end
 
 endmodule
+
+
+
